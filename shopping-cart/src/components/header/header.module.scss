@@ -1,0 +1,151 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.header {
+  width: 100%;
+  box-shadow: 0 8px 6px -6px #d6d6d6;
+  height: 7rem;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+
+  
+
+  &__headerWrapper {
+    margin: 1rem auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    width: 70%;
+
+    &__logo {
+      width: 10rem;
+      height: 5rem;
+      cursor: pointer;
+    }
+
+    &__navWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-self: flex-end;
+      width: 60%;
+    }
+    .navWrapper {
+      &__link {
+        list-style: none;
+        font-size: $font_medium;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(49, 49, 49);
+      }
+
+      &__activeLink {
+        color: red;
+      }
+    }
+
+    &__cartAuth {
+      justify-self: end;
+    }
+
+    .cartAuth {
+      &__auth {
+        display: flex;
+        justify-content: space-between;
+        font-size: $font_small;
+        font-weight: bold;
+        &__login {
+          text-decoration: none;
+          color: black;
+        }
+
+        &__register {
+            margin-left: 1rem;
+          text-decoration: none;
+          color: black;
+        }
+      }
+
+      &__cart {
+        cursor: pointer;
+        position: absolute;
+        @include flexCenter;
+        bottom: 0;
+        background-color: $lightGrey;
+        padding: 0.8rem 2rem;
+        margin-left: -1.8rem;
+
+        &__img {
+          width: 2rem;
+        }
+
+        &__count {
+          margin-left: 0.5rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+li {
+  list-style: none;
+}
+
+
+
+
+
+@media only screen and (max-width : 968px) {
+    .header{
+        &__headerWrapper{
+            width: 100%;
+            margin:1rem 0;
+            padding: 0 2rem;
+
+            &__navWrapper{
+                width: 70%;
+            }
+            
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+.header{
+    height: 6rem;
+    &__headerWrapper{
+        &__logo {
+            height:90%;
+          }
+        &__navWrapper{
+            li{
+                display: none;
+            }
+        } 
+
+        .cartAuth{
+            &__auth{
+                li{display: none;}
+
+            }
+            &__cart {
+                right: 0;
+                height: 100%;
+&__img{
+    width: 3rem;
+}
+&__count{
+    font-size: $font_small;
+}
+               
+            }
+        }
+        
+    }
+   
+}
+
+}
