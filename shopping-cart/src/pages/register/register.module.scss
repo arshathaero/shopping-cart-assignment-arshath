@@ -1,0 +1,53 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+.register {
+  width: 55%;
+  margin-left: 18rem;
+  display: flex;
+  padding: 5rem;
+  justify-content: space-around;
+
+  &__content {
+    width: 55%;
+    &__title {
+      font-size: $font-verybig;
+      font-weight: 800;
+    }
+    &__description {
+      margin-top: 1.5rem;
+      font-size: $font_small;
+    }
+  }
+
+  &__formWrapper {
+    flex: 1;
+
+    .form {
+      &__field {
+        margin-top: 2.5rem;
+      }
+      &__button {
+        margin-top: 3rem;
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  .register {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .register {
+    flex-direction: column;
+
+    &__content {
+      width: 100%;
+      margin-bottom: 4rem;
+    }
+  }
+}

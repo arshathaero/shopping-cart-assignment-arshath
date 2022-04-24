@@ -8,6 +8,7 @@ function App() {
     <main className='main'>
     <Router />
     </main>
+    <br/>
     <Footer/>
     </section>)
 }

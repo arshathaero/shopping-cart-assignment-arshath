@@ -1,5 +1,5 @@
-@import 'styles/variables.scss';
-@import 'styles/mixins.scss';
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
 
 *,
 *::after,
@@ -21,7 +21,7 @@ body {
   max-width: 1920px;
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: $montserrat_regular;
+  font-family: $dosis;
 }
 
 html,

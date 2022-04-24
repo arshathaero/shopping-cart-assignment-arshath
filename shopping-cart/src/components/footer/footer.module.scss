@@ -1,31 +1,27 @@
 @import "styles/variables.scss";
 @import "styles/mixins.scss";
 
+.footer {
+  background-color: $lightGrey;
+  width: 100%;
+  padding: 1rem 0;
 
-.footer{
-    background-color: $lightGrey;
-    width: 100%;
-    padding: 1rem 0;
-
-&__contentWrapper{
+  &__contentWrapper {
     margin: 0 auto;
-    width:70%;
+    width: 70%;
 
-    &__content{
-        font-size: $font_medium;
-        font-weight: bold;
+    &__content {
+      font-size: $font_medium;
+      font-weight: bold;
     }
+  }
 }
 
-}
-
-
-@media only screen and (max-width : 968px) {
-
-.footer{
-    &__contentWrapper{
-        width: 100%;
-        text-align: center;
+@media only screen and (max-width: 968px) {
+  .footer {
+    &__contentWrapper {
+      width: 100%;
+      text-align: center;
     }
-}
+  }
 }

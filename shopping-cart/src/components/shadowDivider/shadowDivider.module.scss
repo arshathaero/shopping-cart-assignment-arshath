@@ -1,0 +1,22 @@
+.shadowWrapper{
+    margin: 0 auto;
+    width: 80%;
+  
+    &__shadow{
+        overflow:hidden;
+        height:20px; 
+
+        &:after{
+            content: "";
+            display: block;
+            margin: -25px auto 0;
+            width: 100%;
+            height: 25px;
+            border-radius: 50%;
+            box-shadow: 0 1px 7px 6px lightgrey;
+        
+        
+        
+        }
+    }
+}

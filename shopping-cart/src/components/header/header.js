@@ -7,41 +7,41 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.header__headerWrapper}>
         <img
-        onClick={()=>window.location.href= '/'}
+          onClick={() => (window.location.href = "/")}
           className={styles.header__headerWrapper__logo}
           src={logo}
           alt="Logo"
         />
-     
-        <ul className={styles.header__headerWrapper__navWrapper}>
-          <li>
-            {" "}
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `${styles.navWrapper__link} ${
-                  isActive ? styles.navWrapper__activeLink : ""
-                }`
-              }
-            >
-              Home{" "}
-            </NavLink>
-          </li>
-          <li>
-            {" "}
-            <NavLink
-              to="/products"
-              className={({ isActive }) =>
-                `${styles.navWrapper__link} ${
-                  isActive ? styles.navWrapper__activeLink : ""
-                }`
-              }
-            >
-              Products
-            </NavLink>
-          </li>
-        </ul>
-
+        <nav className={styles.header__headerWrapper__navWrapper}>
+          <ul className={styles.navWrapper__list}>
+            <li>
+              {" "}
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${styles.navWrapper__list__link} ${
+                    isActive ? styles.navWrapper__list__activeLink : ""
+                  }`
+                }
+              >
+                Home{" "}
+              </NavLink>
+            </li>
+            <li>
+              {" "}
+              <NavLink
+                to="/products"
+                className={({ isActive }) =>
+                  `${styles.navWrapper__list__link} ${
+                    isActive ? styles.navWrapper__list__activeLink : ""
+                  }`
+                }
+              >
+                Products
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
         <div className={styles.header__headerWrapper__cartAuth}>
           <ul className={styles.cartAuth__auth}>
             <li>
@@ -56,7 +56,6 @@ const Header = () => {
             </li>
           </ul>
           <div className={styles.cartAuth__cart}>
-            
             <img className={styles.cartAuth__cart__img} src={cart} />
             <p className={styles.cartAuth__cart__count}> {0} Items</p>
           </div>

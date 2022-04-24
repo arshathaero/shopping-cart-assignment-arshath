@@ -1,0 +1,65 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.textInputWrapper {
+  position: relative;
+
+  &__textInput {
+    font-size: 14px;
+    padding: 4px 4px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgb(193, 193, 193);
+
+    &:focus {
+      outline: none;
+      border-bottom: 1.5px solid $textFocus;
+    }
+
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      top: -18px;
+      font-size: 14px;
+      color: $textFocus;
+    }
+
+    &__error {
+      border-color: $error;
+      &:focus {
+        outline: none;
+        border-bottom: 1.5px solid $error;
+      }
+
+      &:focus ~ label,
+      &:not(:placeholder-shown) ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: $error;
+      }
+    }
+
+    &__errorMsg {
+      color: $error;
+      font-size: $font_verysmall;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+  }
+}
+
+label {
+  color: grey;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 3px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  text-transform: capitalize;
+}

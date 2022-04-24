@@ -1,0 +1,12 @@
+.home {
+  &__category {
+    &__shadowWrap {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &__categoryWrapper {
+      margin: 0 1rem;
+    }
+  }
+}

@@ -10,13 +10,11 @@
   z-index: 999;
   background-color: white;
 
-  
-
   &__headerWrapper {
     margin: 1rem auto;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 4fr 1fr;
     width: 70%;
 
     &__logo {
@@ -26,22 +24,25 @@
     }
 
     &__navWrapper {
-      display: flex;
-      justify-content: space-between;
-      align-self: flex-end;
-      width: 60%;
+      align-self: end;
     }
     .navWrapper {
-      &__link {
-        list-style: none;
-        font-size: $font_medium;
-        font-weight: bold;
-        text-decoration: none;
-        color: rgb(49, 49, 49);
-      }
+      &__list {
+        display: flex;
+        margin-left: 2rem;
 
-      &__activeLink {
-        color: red;
+        &__link {
+          margin-left: 3rem;
+          list-style: none;
+          font-size: $font_medium;
+          font-weight: bold;
+          text-decoration: none;
+          color: rgb(49, 49, 49);
+        }
+
+        &__activeLink {
+          color: red;
+        }
       }
     }
 
@@ -61,7 +62,7 @@
         }
 
         &__register {
-            margin-left: 1rem;
+          margin-left: 1rem;
           text-decoration: none;
           color: black;
         }
@@ -93,59 +94,50 @@ li {
   list-style: none;
 }
 
+@media only screen and (max-width: 968px) {
+  .header {
+    &__headerWrapper {
+      width: 100%;
+      margin: 1rem 0;
+      padding: 0 2rem;
 
-
-
-
-@media only screen and (max-width : 968px) {
-    .header{
-        &__headerWrapper{
-            width: 100%;
-            margin:1rem 0;
-            padding: 0 2rem;
-
-            &__navWrapper{
-                width: 70%;
-            }
-            
-        }
+      &__navWrapper {
+        width: 70%;
+      }
     }
+  }
 }
-
 
 @media only screen and (max-width: 600px) {
-.header{
+  .header {
     height: 6rem;
-    &__headerWrapper{
-        &__logo {
-            height:90%;
-          }
-        &__navWrapper{
-            li{
-                display: none;
-            }
-        } 
-
-        .cartAuth{
-            &__auth{
-                li{display: none;}
-
-            }
-            &__cart {
-                right: 0;
-                height: 100%;
-&__img{
-    width: 3rem;
-}
-&__count{
-    font-size: $font_small;
-}
-               
-            }
+    &__headerWrapper {
+      &__logo {
+        height: 90%;
+      }
+      &__navWrapper {
+        li {
+          display: none;
         }
-        
-    }
-   
-}
+      }
 
+      .cartAuth {
+        &__auth {
+          li {
+            display: none;
+          }
+        }
+        &__cart {
+          right: 0;
+          height: 100%;
+          &__img {
+            width: 3rem;
+          }
+          &__count {
+            font-size: $font_small;
+          }
+        }
+      }
+    }
+  }
 }
