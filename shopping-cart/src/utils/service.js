@@ -22,3 +22,8 @@ export const formValidation = (value, type) => {
   }
   return displayError;
 };
+
+
+export const getImageNameFromUrl = (url) =>{
+  return url?.split('/').at(-1)
+}

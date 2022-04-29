@@ -37,7 +37,6 @@ const Login = () => {
   };
   return (
     <div className={styles.login}>
-      {console.log(formData)}
       <section className={styles.login__content}>
         <h1 className={styles.login__content__title}>Login</h1>
         <h4 className={styles.login__content__description}>

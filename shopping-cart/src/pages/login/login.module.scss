@@ -2,7 +2,8 @@
 @import "styles/mixins.scss";
 .login {
   width: 55%;
-  margin-left: 18rem;
+  position: relative;
+  left: 18rem;
   display: flex;
   padding: 5rem;
   justify-content: space-around;
@@ -37,11 +38,11 @@
 @media only screen and (max-width: 968px) {
   .login {
     width: 100%;
-    margin-left: 0;
+    left: 0;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width:568px) {
   .login {
     flex-direction: column;
 

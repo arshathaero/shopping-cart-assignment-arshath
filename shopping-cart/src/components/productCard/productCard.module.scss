@@ -1,0 +1,15 @@
+.productCard{
+    background-color: white;
+    padding: 0.5rem;
+
+
+    &__details{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__checkoutDetails{
+        display: flex;
+        justify-content: space-between;
+    }
+}

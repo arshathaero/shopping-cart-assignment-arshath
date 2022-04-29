@@ -2,10 +2,15 @@ import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import styles from "./carousal.module.scss";
 import ShadowDivider from "components/shadowDivider/shadowDivider";
-
+import {getImageNameFromUrl} from 'utils/service'
 const Carousal = ({ items, delay }) => {
+
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef(null);
+
+  let touchStart = 0
+  let touchEnd = 0
 
   function resetTimeout() {
     if (timeoutRef.current) {
@@ -27,6 +32,24 @@ const Carousal = ({ items, delay }) => {
     };
   }, [currentIndex]);
 
+
+  function handleTouchStart(e){
+    touchStart = e.targetTouches[0].clientX
+  }
+  function handleTouchEnd(){
+    let forwardIndex = currentIndex === items.length - 1 ? items.length - 1 : currentIndex + 1;
+    let backwardIndex = currentIndex === 0 ?  0 : currentIndex - 1;
+    if (touchStart - touchEnd > 150) {
+      setCurrentIndex(forwardIndex)
+    }else{
+      setCurrentIndex(backwardIndex)
+
+    }
+
+  }
+  function handleTouchMove(e){
+    touchEnd = e.targetTouches[0].clientX
+  }
   return (
     <div className={styles.offerWrapper}>
       <div
@@ -35,9 +58,13 @@ const Carousal = ({ items, delay }) => {
       >
         {items.map((item) => (
           <img
-            key={item}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          
+            key={item.id}
             className={styles.offerWrapper__slideshowSlider__img}
-            src={item}
+            src={require('assets/images/offers/' + getImageNameFromUrl(item.bannerImageUrl))}
           />
         ))}
       </div>
