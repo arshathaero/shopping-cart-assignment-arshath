@@ -6,6 +6,7 @@ import Carousal from "components/carousal/carousal";
 import CategoryCard from "components/categoryCard/categoryCard";
 import styles from "./home.module.scss";
 import ShadowDivider from "components/shadowDivider/shadowDivider";
+import { Outlet } from "react-router-dom";
 const Home = () => {
   const offerBanner = [
     {
@@ -115,6 +116,7 @@ const categoryData = [
           </div> : null
         ))}
       </section>
+      <Outlet/>
     </div>
   );
 };

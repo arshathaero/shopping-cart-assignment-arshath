@@ -25,5 +25,5 @@ export const formValidation = (value, type) => {
 
 
 export const getImageNameFromUrl = (url) =>{
-  return url?.split('/').at(-1)
+  return url?.split('/').splice(2).join('/')
 }

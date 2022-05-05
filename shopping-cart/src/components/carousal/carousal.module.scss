@@ -5,6 +5,7 @@
   position: relative;
   margin: 0 auto;
   overflow: hidden;
+  position: relative;
 
   &__slideshowSlider {
     white-space: nowrap;
@@ -15,6 +16,26 @@
       max-height: 27rem;
       display: inline-block;
     }
+  }
+
+  &__next,
+  &__prev {
+    position: absolute;
+    top: 40%;
+    background-color: $lightGrey;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0.8;
+    color: white;
+    font-size: $font_medium;
+  }
+  &__next {
+    right: 0;
+  }
+
+  &__prev {
+    left: 0 !important;
   }
 
   &__control {

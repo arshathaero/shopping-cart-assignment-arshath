@@ -1,8 +1,11 @@
 import styles from "./header.module.scss";
 import logo from "assets/images/logo.png";
 import cart from "assets/images/cart.svg";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate,useLocation } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
+  /*eslint-disable*/
+  const location=useLocation()
   return (
     <header className={styles.header}>
       <div className={styles.header__headerWrapper}>
@@ -55,7 +58,10 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <div className={styles.cartAuth__cart}>
+          <div
+            onClick={() => navigate("/cart")}
+            className={styles.cartAuth__cart}
+          >
             <img className={styles.cartAuth__cart__img} src={cart} />
             <p className={styles.cartAuth__cart__count}> {0} Items</p>
           </div>

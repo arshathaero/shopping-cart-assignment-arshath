@@ -1,0 +1,89 @@
+
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+.productList{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 100%;
+    &__menu{
+        padding-left: 0.5rem;
+        background-color: rgb(240, 240, 240);
+        height: 100%;
+        min-height: 100vh;
+
+     
+        .categories{
+
+            &__category{
+                padding: 1rem;
+                margin-left: 1rem;
+                border-bottom: 1px solid rgb(214, 214, 214);
+                font-size: $font_medium;
+                cursor: pointer;
+
+                &:hover{
+                    color: $primary;
+                }
+            }
+
+            &__active{
+                color:  $primary;
+            }
+        }
+        &__categoryDropdown{
+            display: none;
+        }
+    }
+
+    &__products{
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 2rem;
+        grid-row-gap: 6rem;
+    
+
+    }
+
+  
+}
+
+
+
+
+
+@media screen and (max-width:968px){
+
+    .productList{
+        &__products{
+            grid-template-columns: 1fr 1fr;
+           
+        }
+    }
+    
+}
+
+
+@media screen and (max-width:568px){
+    .productList{
+        display: block;
+        &__menu{
+            min-height: 100%;
+            &__categories{
+                display: none;
+
+            }
+
+            &__categoryDropdown{
+                display: block;
+            }
+        }
+        &__products {
+          
+            grid-template-columns: 1fr;
+            grid-row-gap: 4rem;
+
+        }
+    }
+    
+}

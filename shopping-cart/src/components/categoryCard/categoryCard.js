@@ -7,7 +7,7 @@ import {getImageNameFromUrl} from 'utils/service'
 const CategoryCard = ({item}) => {
   let evenData = item.order % 2 === 0;
     return (<div style={{flexFlow:evenData && 'row-reverse'}}  className={styles.categoryWrapper}>
-        <img className={styles.categoryWrapper__img} src={require('assets/images/category/' + getImageNameFromUrl(item.imageUrl))} />
+        <img className={styles.categoryWrapper__img} src={require('assets/' + getImageNameFromUrl(item.imageUrl))} />
         <div className={styles.categoryWrapper__content}>
 
             <h1 className={styles.categoryWrapper__content__title}>{item.name}</h1>
