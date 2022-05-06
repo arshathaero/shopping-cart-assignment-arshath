@@ -22,7 +22,7 @@ const Button = (props) => {
 
 Button.propTypes = {
   buttonClick: PropTypes.func,
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   isBtnDisabled: PropTypes.bool,
   className: PropTypes.string,
   type: PropTypes.string,
@@ -31,7 +31,7 @@ Button.propTypes = {
 Button.defaultProps = {
   buttonClick: () => {},
   isBtnDisabled: false,
-  children: "",
+  children: [],
   className: "",
   type: "button",
 };

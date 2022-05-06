@@ -34,7 +34,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
   .register {
     width: 100%;
     left: 0;
@@ -43,7 +43,7 @@
 
 @media only screen and (max-width: 568px) {
   .register {
-    flex-direction: column;
+    display: block;
 
     &__content {
       width: 100%;

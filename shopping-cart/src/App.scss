@@ -1,11 +1,12 @@
 .main {
   width: 80%;
+  height: calc(100% - 7rem);
   margin: 7rem auto 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
   .main {
-    margin-top: 7rem;
+    margin-top: 6rem !important;
     width: 100%;
   }
 }

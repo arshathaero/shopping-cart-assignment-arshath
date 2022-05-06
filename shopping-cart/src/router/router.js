@@ -8,18 +8,15 @@ import ProductList from 'pages/productList/productList'
 import Cart from 'pages/cart/cart'
 const Router = () => {
 
-  function Don(){
-    return <p>Hello</p>
-  }
+
   const location = useLocation();
   let background = location.state && location.state.background;
-
   return (<><Routes location={background || location}>
     <Route path="/" element={<Home />}/> 
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="/products" element={<ProductList />} />
-    <Route path="/cart" element={<Don />} />
+    <Route path="/cart" element={<Cart />} />
 
     {/* <Route path="*" element={<PageNotFound />} /> */}
   </Routes>

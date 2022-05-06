@@ -12,7 +12,7 @@ const CategoryCard = ({item}) => {
 
             <h1 className={styles.categoryWrapper__content__title}>{item.name}</h1>
             <p className={styles.categoryWrapper__content__description}>{item.description}</p>
-            <Button  className={styles.categoryWrapper__content__button} >{`Explore ${item.key}`}</Button>
+            <Button  className={styles.categoryWrapper__content__button} >Explore {item.key}</Button>
         </div>
     </div>)
     

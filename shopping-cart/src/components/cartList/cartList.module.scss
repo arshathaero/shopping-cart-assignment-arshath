@@ -1,0 +1,101 @@
+
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+.cartList{
+
+    display: flex;
+    flex-direction: column;
+    &__cartItems{
+        overflow-y: auto;
+        background-color: $lightGrey;
+        &__cartItemsModal{
+            height: calc(100vh - 18rem);
+        }
+        &__cartItemsPage{
+            height: calc(100vh - 24rem);
+        }
+    }
+   
+  &__lowestPrice{
+      margin: 1rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      padding: 1.5rem;
+
+      &__img{
+          width: 10rem;
+      }
+      &__desc{
+          font-weight: 600;
+          font-size: $font_medium;
+          margin-left: 2rem;
+      }
+  }
+
+  &__footer{
+      text-align: center;
+      height: 8rem;
+      padding:1rem;
+      background-color: white;
+      width: 100%;
+
+      &__promoHeading{
+          margin-bottom: 0.8rem;
+          font-weight: 600;
+          font-size: $font_small;
+      }
+
+      &__btn{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+            margin: 0 2rem;
+        }
+        i{
+            margin-left: 1rem;
+            font-size: $font_verysmall;
+        }
+      }
+  }
+}
+
+.cartEmpty{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 15rem);
+
+&__content{
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__heading{
+        font-size: $font-big;
+        font-weight: 800;
+    }
+    &__desc{
+        margin-top: 1rem;
+        font-size: $font_medium;
+        font-weight: bold;
+    }
+}
+&__btnWrapper{
+padding: 1rem;
+}
+
+}
+
+
+
+@media screen and (max-width:960px){
+    .cartList{
+        &__footer{
+            width: 100%;
+        }
+    }
+}

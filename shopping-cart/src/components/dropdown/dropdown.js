@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-/* eslint-disable */
 import styles from "./dropdown.module.scss";
 const Dropdown = ({
   selectedOption,
@@ -57,23 +56,21 @@ const Dropdown = ({
     </div>
   );
 
-  //     return <select defaultValue={selectedCategory.id} className={styles.dropdown__heading} name="Select" id="cars">
-  //         <option disabled value=''>Select Category</option>
-  //         {options.map(element=><option selected={element.id === selectedCategory.id} value={element.id}>{element.name}</option>)}
-
-  //   </select>
 };
 
 Dropdown.propTypes = {
   options: PropTypes.array,
-  selectedOption: PropTypes.string,
+  selectedOption: PropTypes.oneOfType([PropTypes.string,PropTypes.object]),
   setSelectedOption: PropTypes.func,
+  className:PropTypes.string
 };
 
 Dropdown.defaultProps = {
   options: [],
-  selectedOption: "",
+  selectedOption: '',
   setSelectedOption: () => null,
+  className:''
+
 };
 
 export default Dropdown;

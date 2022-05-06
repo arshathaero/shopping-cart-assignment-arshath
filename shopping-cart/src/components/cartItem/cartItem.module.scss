@@ -1,0 +1,54 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+.cartItem{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+
+    &__img{
+        width: 7rem;
+    }
+
+    &__details{
+        flex:1;
+        font-weight: bold;
+        margin-left: 1rem;
+
+        &__title{
+            font-size: $font_medium;
+        }
+
+        &__quantityWrapper{
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+
+        }
+        .quantityWrapper{
+            &__icon{
+              padding: 0.5rem 0.8rem;
+              background-color: $primary;
+              color: white;
+              border-radius: 2px;
+              cursor: pointer;
+
+            }
+            &__count{
+                margin: 0 1rem;
+            }
+
+            &__price{
+                margin-left: 1rem;
+                font-size: $font_small;
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__subTotal{
+       font-size: $font_medium;
+       font-weight: 600;
+    }
+}

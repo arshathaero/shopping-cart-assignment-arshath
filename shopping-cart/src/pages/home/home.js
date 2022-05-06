@@ -45,7 +45,6 @@ const Home = () => {
       "id": "5b6c386b6cb7d770b7010cd0"
     }
   ];
-/* eslint-disable */
 
 const categoryData = [
   {

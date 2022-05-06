@@ -73,6 +73,18 @@
   .offerWrapper {
     &__control {
       position: static;
+
+      &__circle {
+        height: 0.6rem;
+        width: 0.6rem;
+      }
+    }
+
+    &__next,
+    &__prev {
+      top: 30%;
+      padding: 0.5rem;
+      font-size: $font_verysmall;
     }
   }
 }

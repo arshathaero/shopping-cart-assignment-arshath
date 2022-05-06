@@ -340,7 +340,7 @@ const ProductList = () => {
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [list, setList] = useState(data);
 
   useEffect(() => {

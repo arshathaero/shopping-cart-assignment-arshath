@@ -1,11 +1,11 @@
 import styles from "./header.module.scss";
 import logo from "assets/images/logo.png";
 import cart from "assets/images/cart.svg";
-import { NavLink, Link, useNavigate,useLocation } from "react-router-dom";
+import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
-  /*eslint-disable*/
-  const location=useLocation()
+  const location = useLocation();
+  const isSmallScreen = window.innerWidth <= 960;
   return (
     <header className={styles.header}>
       <div className={styles.header__headerWrapper}>
@@ -59,7 +59,11 @@ const Header = () => {
             </li>
           </ul>
           <div
-            onClick={() => navigate("/cart")}
+            onClick={() =>
+              navigate("/cart", {
+                state: { background: !isSmallScreen && location },
+              })
+            }
             className={styles.cartAuth__cart}
           >
             <img className={styles.cartAuth__cart__img} src={cart} />
