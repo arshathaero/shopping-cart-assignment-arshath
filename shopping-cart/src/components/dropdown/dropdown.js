@@ -1,12 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./dropdown.module.scss";
-const Dropdown = ({
-  selectedOption,
-  setSelectedOption,
-  options,
-  className,
-}) => {
+const Dropdown = ({ selectedCategory, options, className, handleCategory }) => {
   const containerRef = useRef();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -27,7 +22,7 @@ const Dropdown = ({
 
   const optionHandler = (option) => {
     setDropdownOpen(false);
-    setSelectedOption(option);
+    handleCategory(option);
   };
 
   return (
@@ -36,7 +31,7 @@ const Dropdown = ({
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className={styles.dropdown__heading}
       >
-        {selectedOption.name || "Select Category"}{" "}
+        {selectedCategory.name || "Select Category"}{" "}
         <i className="fa-solid fa-angle-down"></i>
       </p>
 
@@ -55,22 +50,20 @@ const Dropdown = ({
       )}
     </div>
   );
-
 };
 
 Dropdown.propTypes = {
   options: PropTypes.array,
-  selectedOption: PropTypes.oneOfType([PropTypes.string,PropTypes.object]),
-  setSelectedOption: PropTypes.func,
-  className:PropTypes.string
+  selectedCategory: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  className: PropTypes.string,
+  handleCategory: PropTypes.func,
 };
 
 Dropdown.defaultProps = {
   options: [],
-  selectedOption: '',
-  setSelectedOption: () => null,
-  className:''
-
+  selectedCategory: "",
+  className: "",
+  handleCategory: () => null,
 };
 
 export default Dropdown;

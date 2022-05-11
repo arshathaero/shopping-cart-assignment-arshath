@@ -3,11 +3,14 @@ import TextInput from "components/textInput/textInput";
 import styles from "./login.module.scss";
 import Button from "components/button/button";
 import { formValidation } from "utils/service";
+import { useNavigate } from "react-router";
 const Login = () => {
-  const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+  let form = {
     email: { value: "", error: "" },
     password: { value: "", error: "" },
-  });
+  };
+  const [formData, setFormData] = useState(form);
 
   const handleInput = (e, type) => {
     let text = e.target.value;
@@ -31,9 +34,10 @@ const Login = () => {
   };
 
   const handleSubmit = (e) => {
+    console.log(formData);
     e.preventDefault();
     if (!checkValidation()) return;
-    alert("Login Successfully");
+    navigate("/");
   };
   return (
     <div className={styles.login}>
@@ -49,7 +53,7 @@ const Login = () => {
           onSubmit={handleSubmit}
           className={styles.login__formWrapper__form}
         >
-          {Object.keys(formData).map((element) => (
+          {Object.keys(form).map((element) => (
             <TextInput
               key={element}
               className={styles.form__field}

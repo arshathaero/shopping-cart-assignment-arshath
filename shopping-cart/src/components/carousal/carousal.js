@@ -17,18 +17,18 @@ const Carousal = ({ items, delay }) => {
   }
 
   useEffect(() => {
+
     resetTimeout();
 
     timeoutRef.current = setTimeout(() => {
       let index = currentIndex < items.length - 1 ? currentIndex + 1 : 0;
-
       setCurrentIndex(index);
     }, delay);
 
     return () => {
       resetTimeout();
     };
-  }, [currentIndex]);
+  }, [currentIndex,items]);
 
   function handleTouchStart(e) {
     touchStart = e.targetTouches[0].clientX;

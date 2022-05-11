@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./productCard.module.scss";
 import { getImageNameFromUrl } from "utils/service";
 
-const ProductCard = ({ data }) => {
+const ProductCard = ({ data, btnClick }) => {
   return (
     <div className={styles.productCard}>
       <section>
@@ -25,6 +25,7 @@ const ProductCard = ({ data }) => {
               </p>
             </article>
             <Button
+              buttonClick={btnClick}
               className={styles.content__descBuyNowBtn}
             >{`Buy Now @ Rs.${data.price}`}</Button>
           </div>
@@ -33,11 +34,15 @@ const ProductCard = ({ data }) => {
           <p
             className={styles.productCard__checkoutDetails__price}
           >{`MRP Rs.${data.price}`}</p>
-          <Button className={styles.productCard__checkoutDetails__btn}>
+          <Button
+            buttonClick={btnClick}
+            className={styles.productCard__checkoutDetails__btn}
+          >
             Buy Now
           </Button>
         </div>
         <Button
+          buttonClick={btnClick}
           className={styles.productCard__buyNowBtn}
         >{`Buy Now @ Rs.${data.price}`}</Button>
       </section>
@@ -48,10 +53,12 @@ const ProductCard = ({ data }) => {
 };
 ProductCard.propTypes = {
   data: PropTypes.object,
+  btnClick: PropTypes.func,
 };
 
 ProductCard.defaultProps = {
   data: {},
+  btnClick: () => null,
 };
 
 export default ProductCard;

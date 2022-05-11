@@ -61,11 +61,18 @@
   }
 }
 
+.cartEmptyModal{
+    height: calc(100vh - 10rem);
+
+}
+.cartEmptyPage{
+    height: calc(100vh - 15rem);
+
+}
 .cartEmpty{
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 15rem);
 
 &__content{
     flex: 1;

@@ -1,48 +1,46 @@
-
 @import "styles/variables.scss";
 @import "styles/mixins.scss";
-.cart{
-    background-color: $lightGrey;
+.cart {
+  background-color: $lightGrey;
+  height: 100%;
+  &__cartPage {
+    padding-top: 3rem;
     height: 100%;
-    &__cartPage{
-       padding-top: 3rem;
-       height: 100%;
+  }
+  .cartWrapper {
+    &__heading {
+      background-color: white;
+      width: 100%;
+      padding: 1.5rem 2rem;
     }
-    .cartWrapper{
-        &__heading{
-            background-color: white;
-            width: 100%;
-            padding: 1.5rem 2rem;
-        }
-    }
+  }
 
-    &__cartModal{
-        &__cartModalWrapper{
-            position: absolute;
-    background: white;
-    right: 10%;
-    bottom: 0;
-    height: 90%;
-    width: 40rem;
-    z-index: 11;
-        }
-        .cartModalWrapper{
-            &__header{
-                background-color: black;
-                padding: 1.5rem 2rem;
-                color: white;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                &__title{
-                    font-size: $font_small;
-                }
-                &__closeIcon{
-                    font-size: $font_medium;
-                    cursor: pointer;
-                }
-            }
-        }
+  &__cartModal {
+    &__cartModalWrapper {
+      position: fixed;
+      background: white;
+      right: 10%;
+      bottom: 0;
+      height: 90%;
+      width: 40rem;
+      z-index: 11;
     }
+    .cartModalWrapper {
+      &__header {
+        background-color: black;
+        padding: 1.5rem 2rem;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__title {
+          font-size: $font_small;
+        }
+        &__closeIcon {
+          font-size: $font_medium;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
-

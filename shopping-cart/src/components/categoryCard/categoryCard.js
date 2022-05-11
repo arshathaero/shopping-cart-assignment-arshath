@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './categoryCard.module.scss'
 import {getImageNameFromUrl} from 'utils/service'
 
-const CategoryCard = ({item}) => {
+const CategoryCard = ({item,categoryNavigateHandler}) => {
   let evenData = item.order % 2 === 0;
     return (<div style={{flexFlow:evenData && 'row-reverse'}}  className={styles.categoryWrapper}>
         <img className={styles.categoryWrapper__img} src={require('assets/' + getImageNameFromUrl(item.imageUrl))} />
@@ -12,18 +12,20 @@ const CategoryCard = ({item}) => {
 
             <h1 className={styles.categoryWrapper__content__title}>{item.name}</h1>
             <p className={styles.categoryWrapper__content__description}>{item.description}</p>
-            <Button  className={styles.categoryWrapper__content__button} >Explore {item.key}</Button>
+            <Button buttonClick={categoryNavigateHandler}  className={styles.categoryWrapper__content__button} >Explore {item.key}</Button>
         </div>
     </div>)
     
 }
 CategoryCard.propTypes = {
-    item: PropTypes.object
+    item: PropTypes.object,
+    categoryNavigateHandler:PropTypes.func
   
   };
   
   CategoryCard.defaultProps = {
-    item: {}
+    item: {},
+    categoryNavigateHandler:()=>null
  
   };
 

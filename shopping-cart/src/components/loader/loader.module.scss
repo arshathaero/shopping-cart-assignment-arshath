@@ -1,0 +1,46 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.loaderWrapper {
+
+
+  &__loader {
+  
+
+    border: 3px solid $lightGrey;
+    border-radius: 50%;
+    border-top: 3px solid $primary;
+    width: 3rem;
+    height: 3rem;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+
+  &__smallLoader {
+    border: 2px solid $lightGrey;
+    border-top: 2px solid $primary;
+    width: 2rem;
+    height: 2rem;
+  }
+
+ 
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+

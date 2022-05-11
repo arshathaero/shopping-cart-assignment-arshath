@@ -4,8 +4,11 @@ import styles from "./register.module.scss";
 import Button from "components/button/button";
 import { formValidation } from "utils/service";
 import { ERROR_MESSAGES } from "constants/app-constant";
+import { useNavigate } from "react-router";
 const Register = () => {
-  const [formData, setFormData] = useState({
+  const navigate = useNavigate();
+
+  let form = {
     firstname: { value: "", error: "", type: "text", label: "First Name" },
     lastname: { value: "", error: "", type: "text", label: "last Name" },
     email: { value: "", error: "", type: "email", label: "Email" },
@@ -16,7 +19,8 @@ const Register = () => {
       type: "password",
       label: "Confirm Password",
     },
-  });
+  };
+  const [formData, setFormData] = useState(form);
 
   const handleInput = (e, type) => {
     let text = e.target.value;
@@ -48,7 +52,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!checkValidation()) return;
-    alert("Login Successfully");
+    navigate("/");
   };
   return (
     <div className={styles.register}>
@@ -64,7 +68,7 @@ const Register = () => {
           onSubmit={handleSubmit}
           className={styles.register__formWrapper__form}
         >
-          {Object.keys(formData).map((element) => (
+          {Object.keys(form).map((element) => (
             <TextInput
               key={element}
               className={`${styles.form__field}`}
